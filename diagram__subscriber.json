@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Thiago J luz",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 9.6, "left": -206.36, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -140.57, "left": -108.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -5.65,
+      "left": -182.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VSS", "esp:GND.3", "black", [ "v0" ] ],
+    [ "lcd1:RW", "esp:GND.3", "black", [ "v0" ] ],
+    [ "lcd1:K", "esp:GND.3", "black", [ "v0" ] ],
+    [ "lcd1:VDD", "esp:3V3", "red", [ "v28.8", "h-134.3" ] ],
+    [ "lcd1:A", "r1:2", "red", [ "v0" ] ],
+    [ "r1:1", "esp:3V3", "red", [ "v0", "h-19.2" ] ],
+    [ "lcd1:D4", "esp:5", "green", [ "v0" ] ],
+    [ "lcd1:D5", "esp:17", "green", [ "v0" ] ],
+    [ "lcd1:D6", "esp:16", "green", [ "v0" ] ],
+    [ "lcd1:D7", "esp:4", "green", [ "v0" ] ],
+    [ "lcd1:RS", "esp:19", "orange", [ "v115.2", "h-57.3" ] ],
+    [ "lcd1:E", "esp:18", "gold", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
